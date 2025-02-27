@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h2 {
+        margin-left: 20px;
+      }
+      form {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      label {
+        display: inline-block;
+        width: 120px;
+        margin-bottom: 8px;
+      }
+      input {
+        width: 150px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 8px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .container {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <div class="container">
+      <form id="registerForm">
+        <label>User Name:</label>
+        <input type="text" id="username" required /><br />
+
+        <label>Password:</label>
+        <input type="password" id="password" required /><br />
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword" required /><br />
+
+        <label>Email:</label>
+        <input type="email" id="email" required /><br />
+
+        <label>Phone:</label>
+        <input type="tel" id="phone" required /><br />
+
+        <label>City:</label>
+        <input type="text" id="city" required /><br />
+
+        <button type="button" onclick="registerUser()">Register</button>
+      </form>
+    </div>
+
+    <script>
+      function registerUser() {
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+
+        alert("Registration successful!");
+        window.location.href = "success.html";
+      }
+    </script>
+  </body>
+</html>
